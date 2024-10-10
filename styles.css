@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure responsiveness for smaller devices */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    background-color: #333;
+    padding-right: 1rem;
+    
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default, used for mobile nav */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Character Section */
+.characters {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.character-grid {
+    display: flex;
+    flex-wrap: wrap; /* Ensure responsiveness */
+    gap: 20px;
+    justify-content: center; /* Center items */
+}
+
+.character-card {
+    position: relative;
+    width: 100%; /* Adjusted for responsiveness */
+    max-width: 300px; /* Ensure images don’t get too big */
+    transition: transform 0.3s ease-in-out;
+}
+
+.character-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.character-card:hover img {
+    transform: scale(1.1);
+}
+
+.character-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Carousel */
+.carousel {
+    padding: 2rem;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    
+}
+
+.carousel-item {
+    min-width: 350px;
+    margin-right: 20px;
+    background-color: #ddd;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 50%;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+/* CTA Button */
+.cta-btn {
+    
+    display: inline-block;
+    
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+    background-color: #555;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Display burger icon on smaller screens */
+        background-color: transparent;
+        border: none;
+        font-size: 2rem;
+        color: white;
+    }
+
+    /* Display navigation menu when button is clicked */
+    .navbar.active .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Scale down text */
+    }
+
+    .character-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel {
+        padding: 2rem;
+    }
+    
+    .carousel-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+    
+    .carousel-item {
+        min-width: 200px;
+        margin-right: 20px;
+        background-color: #ddd;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        height: 50%;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+}
